@@ -1,12 +1,11 @@
 package com.umarov.quotesapp.service;
 
-import com.umarov.quotesapp.entity.Quote;
+import com.umarov.quotesapp.model.Quote;
 import com.umarov.quotesapp.repository.QuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class QuoteService {

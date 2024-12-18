@@ -1,5 +1,6 @@
-package com.umarov.quotesapp.entity;
+package com.umarov.quotesapp.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,9 @@ public class Quote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonProperty("text")
     private String text;
 
+    @JsonProperty("author")
     private String author;
 }

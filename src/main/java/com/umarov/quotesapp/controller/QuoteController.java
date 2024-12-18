@@ -1,6 +1,6 @@
 package com.umarov.quotesapp.controller;
 
-import com.umarov.quotesapp.entity.Quote;
+import com.umarov.quotesapp.model.Quote;
 import com.umarov.quotesapp.service.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
