@@ -1,0 +1,5 @@
+2024-12-18 14:58:35.726600+05:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO quote (author, text) \000d\000aVALUES ('Walter White', Say My Name.[*]');"
+Syntax error in SQL statement "INSERT INTO quote (author, text) \000d\000aVALUES ('Walter White', Say My Name.[*]');"; SQL statement:
+INSERT INTO quote (author, text) 
+VALUES ('Walter White', Say My Name.'); [42000-232]
