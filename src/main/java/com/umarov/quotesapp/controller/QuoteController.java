@@ -3,6 +3,8 @@ package com.umarov.quotesapp.controller;
 import com.umarov.quotesapp.model.Quote;
 import com.umarov.quotesapp.service.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,8 +31,8 @@ public class QuoteController {
     }
 
     @PostMapping
-    public Quote addQuote(@RequestBody Quote quote) {
-        return quoteService.addQuote(quote);
+    public ResponseEntity<Quote> addQuote(@RequestBody Quote quote) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(quoteService.addQuote(quote));
     }
 
     @PutMapping("/{id}")
@@ -39,9 +41,9 @@ public class QuoteController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteQuote(@PathVariable Long id) {
+    public ResponseEntity<?> deleteQuote(@PathVariable Long id) {
         quoteService.deleteQuote(id);
-        return "Quote with id " + id + " has been deleted.";
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
 }
