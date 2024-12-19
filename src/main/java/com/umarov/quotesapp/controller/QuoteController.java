@@ -32,4 +32,16 @@ public class QuoteController {
     public Quote addQuote(@RequestBody Quote quote) {
         return quoteService.addQuote(quote);
     }
+
+    @PutMapping("/{id}")
+    public Quote updateQuote(@PathVariable Long id, @RequestBody Quote quote) {
+        return quoteService.updateQuote(id, quote);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteQuote(@PathVariable Long id) {
+        quoteService.deleteQuote(id);
+        return "Quote with id " + id + " has been deleted.";
+    }
+
 }
